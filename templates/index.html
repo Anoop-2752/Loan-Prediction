@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Prediction App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Loan Prediction</h2>
+        <form id="loanForm">
+            <label>Applicant Income:</label>
+            <input type="number" id="ApplicantIncome" placeholder="5000" required>
+
+            <label>Coapplicant Income:</label>
+            <input type="number" id="CoapplicantIncome" placeholder="2000" required>
+
+            <label>Loan Amount:</label>
+            <input type="number" id="LoanAmount" placeholder="150" required>
+
+            <label>Loan Term (months):</label>
+            <input type="number" id="Loan_Amount_Term" placeholder="360" required>
+
+            <label>Credit History:</label>
+            <select id="Credit_History">
+                <option value="1">Good</option>
+                <option value="0">Bad</option>
+            </select>
+
+            <label>Dependents:</label>
+            <select id="Dependents">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3+</option>
+            </select>
+
+            <label>Gender:</label>
+            <select id="Gender">
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
+
+            <label>Married:</label>
+            <select id="Married">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <label>Education:</label>
+            <select id="Education">
+                <option value="0">Graduate</option>
+                <option value="1">Not Graduate</option>
+            </select>
+
+            <label>Self Employed:</label>
+            <select id="Self_Employed">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <label>Property Area:</label>
+            <select id="Property_Area">
+                <option value="0">Rural</option>
+                <option value="1">Semiurban</option>
+                <option value="2">Urban</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <div id="result" class="hidden"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
